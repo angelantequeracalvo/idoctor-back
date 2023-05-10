@@ -1,6 +1,6 @@
 spring:
   application:
-    name: postgresql-example
+    name: idoctor
   data:
     jpa.repositories.enabled: true
   datasource:
