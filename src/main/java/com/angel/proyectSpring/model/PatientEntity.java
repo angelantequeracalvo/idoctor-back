@@ -3,10 +3,12 @@ package com.angel.proyectSpring.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.NotBlank;
+
+import java.util.List;
 
 
 @Entity(name = "PATIENT")
-@Table(name = "PATIENT")
 @Getter
 @Setter
 public class PatientEntity {
@@ -14,13 +16,18 @@ public class PatientEntity {
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
-    private String nombre;
+    @NotBlank(message = "nombre is required")
+    private String name;
     @Column
-    private String apellidos;
+    @NotBlank(message = "nombre is required")
+    private String surname;
     @Column
-    private Integer edad;
+    private Integer age;
     @Column
     private String dni;
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<AppointmentEntity> appointments;
+
 
 
 

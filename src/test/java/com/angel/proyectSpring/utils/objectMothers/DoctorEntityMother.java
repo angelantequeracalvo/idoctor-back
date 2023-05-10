@@ -10,9 +10,9 @@ public class DoctorEntityMother {
     public static DoctorEntity returnOne(){
         DoctorEntity doctorEntity= new DoctorEntity();
         doctorEntity.setId(1L);
-        doctorEntity.setNombre("Angel");
-        doctorEntity.setApellidos("Antequera");
-        doctorEntity.setEdad(25);
+        doctorEntity.setName("Angel");
+        doctorEntity.setSurname("Antequera");
+        doctorEntity.setAge(25);
         return doctorEntity;
 
     }

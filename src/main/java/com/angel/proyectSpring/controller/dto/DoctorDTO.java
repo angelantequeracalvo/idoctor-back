@@ -8,9 +8,9 @@ import lombok.*;
 
 public class DoctorDTO {
 
-    private String nombre;
-    private String alias;
-    private Integer edad;
+    private String name;
+    private String surname;
+    private Integer age;
     private Long id;
 }
 

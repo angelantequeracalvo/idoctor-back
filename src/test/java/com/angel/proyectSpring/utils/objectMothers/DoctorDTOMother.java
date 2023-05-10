@@ -10,9 +10,9 @@ public class DoctorDTOMother {
     public static DoctorDTO returnOne(){
         DoctorDTO doctorDTO= new DoctorDTO();
         doctorDTO.setId(1L);
-        doctorDTO.setNombre("Angel");
-        doctorDTO.setAlias("Antequera");
-        doctorDTO.setEdad(25);
+        doctorDTO.setName("Angel");
+        doctorDTO.setSurname("Antequera");
+        doctorDTO.setAge(25);
         return doctorDTO;
 
     }

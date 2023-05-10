@@ -5,11 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.NotBlank;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "DOCTOR")
-@Table(name = "DOCTOR")
 @Getter
 @Setter
 public class DoctorEntity {
@@ -19,17 +17,18 @@ public class DoctorEntity {
 
     @Column
     @NotBlank(message = "nombre is required")
-    private String nombre;
+    private String name;
     @Column
     @NotBlank (message = "apellidos is required")
-    private String apellidos;
+    private String surname;
     @Column
-   // @NotBlank
-    private Integer edad;
-
+    private Integer age;
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<AppointmentEntity> appointments;
+
+  //  @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
    // @JoinColumn(name = "doctor_id")
-   private List<PatientEntity> patients = new ArrayList<>();
+ //  private List<PatientEntity> patients = new ArrayList<>();
 
 
 }

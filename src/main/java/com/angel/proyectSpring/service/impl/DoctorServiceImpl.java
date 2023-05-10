@@ -1,6 +1,5 @@
 package com.angel.proyectSpring.service.impl;
 
-
 import com.angel.proyectSpring.controller.dto.DoctorDTO;
 import com.angel.proyectSpring.mapper.DoctorMapper;
 import com.angel.proyectSpring.model.DoctorEntity;
@@ -19,25 +18,22 @@ public class DoctorServiceImpl implements DoctorService{
 
     public List<DoctorDTO> findAll() {
       return DoctorMapper.INSTANCE.entityToDtoList(doctorRepository.findAll());
-
     }
 
-
-    public void create(DoctorDTO doctor) {
+    public DoctorDTO create(DoctorDTO doctor) {
         DoctorEntity doctorEntity = DoctorMapper.INSTANCE.dtoToModel(doctor);
-        this.doctorRepository.save(doctorEntity);
+        DoctorEntity doctorCreate = this.doctorRepository.save(doctorEntity);
+        return DoctorMapper.INSTANCE.entityToDto(doctorCreate);
     }
 
-
-    public void edit(long id, DoctorDTO doctor) {
+    public DoctorDTO edit(long id, DoctorDTO doctor) {
         DoctorEntity doctorEntity = DoctorMapper.INSTANCE.dtoToModel(doctor);
         doctorEntity.setId(id);
-        this.doctorRepository.save(doctorEntity);
+        DoctorEntity doctorCreate = this.doctorRepository.save(doctorEntity);
+        return DoctorMapper.INSTANCE.entityToDto(doctorCreate);
     }
-
 
     public void delete (Long doctor){
         this.doctorRepository.deleteById(doctor);
     }
-
 }

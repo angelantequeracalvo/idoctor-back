@@ -11,10 +11,11 @@ import lombok.NoArgsConstructor;
 public class PatientDTO {
 
 
-    private String nombre;
-    private String alias;
-    private Integer edad;
+    private String name;
+    private String surname;
+    private Integer age;
     private Long id;
+    private String dni;
 
 
 

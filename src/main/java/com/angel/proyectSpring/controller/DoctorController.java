@@ -15,6 +15,7 @@ import java.util.List;
 @RequestMapping("/api/doctor")
 @RequiredArgsConstructor
 @Validated
+@CrossOrigin
 public class DoctorController {
     private final DoctorService doctorService;
     @GetMapping()
@@ -25,15 +26,17 @@ public class DoctorController {
 
     @PostMapping()
     public ResponseEntity create(@Valid @RequestBody DoctorDTO doctor) {
-        this.doctorService.create(doctor);
-       // return new ResponseEntity<>(HttpStatus.CREATED);
-        return ResponseEntity.ok("is create");
+        DoctorDTO doctorCreate = this.doctorService.create(doctor);
+        return ResponseEntity.ok(doctorCreate);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity edit(@PathVariable("id") long id, @RequestBody DoctorDTO doctor) {
-        doctorService.edit(id, doctor);
-        return new ResponseEntity<>(HttpStatus.OK);
+        if(doctor==null){
+            return ResponseEntity.notFound().build();
+        }else{
+            return ResponseEntity.ok(doctorService.edit(id, doctor));
+        }
     }
 
     @DeleteMapping("/{id}")
