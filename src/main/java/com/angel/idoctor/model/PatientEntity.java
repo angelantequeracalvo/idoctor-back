@@ -25,7 +25,7 @@ public class PatientEntity {
     private Integer age;
     @Column
     private String dni;
-    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<AppointmentEntity> appointments;
 
 

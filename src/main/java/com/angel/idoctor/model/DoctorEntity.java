@@ -23,13 +23,8 @@ public class DoctorEntity {
     private String surname;
     @Column
     private Integer age;
-    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<AppointmentEntity> appointments;
-
-  //  @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
-   // @JoinColumn(name = "doctor_id")
- //  private List<PatientEntity> patients = new ArrayList<>();
-
 
 }
 

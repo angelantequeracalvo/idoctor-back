@@ -1,6 +1,8 @@
 package com.angel.idoctor.utils.objectMothers;
 
 import com.angel.idoctor.controller.dto.AppointmentDTO;
+import com.angel.idoctor.controller.dto.DoctorDTO;
+import com.angel.idoctor.controller.dto.PatientDTO;
 
 import java.util.Collections;
 import java.util.Date;
@@ -10,8 +12,12 @@ public class AppointmentDTOMother {
     public static AppointmentDTO returnOne(){
         AppointmentDTO AppointmentDTO= new AppointmentDTO();
         AppointmentDTO.setAppointmentDate(new Date());
-        AppointmentDTO.setIdDoctor(1L);
-        AppointmentDTO.setIdPatient(1L);
+        DoctorDTO doctorDTO = new DoctorDTO();
+        doctorDTO.setId(1L);
+        AppointmentDTO.setDoctor(doctorDTO);
+        PatientDTO patientDTO = new PatientDTO();
+        patientDTO.setId(1L);
+        AppointmentDTO.setPatient(patientDTO);
         return AppointmentDTO;
 
     }

@@ -12,12 +12,12 @@ import java.util.List;
 public interface AppointmentMapper {
     AppointmentMapper INSTANCE = Mappers.getMapper(AppointmentMapper.class);
 
-    @Mapping(target= "idDoctor", source = "doctor.id")
-    @Mapping(target= "idPatient", source = "patient.id")
+   // @Mapping(target= "idDoctor", source = "doctor.id")//
+    //@Mapping(target= "idPatient", source = "patient.id")
     AppointmentDTO entityToDto (AppointmentEntity appointmentEntity);
 
-    @Mapping(target= "doctor.id", source = "idDoctor")
-    @Mapping(target= "patient.id", source = "idPatient")
+  //  @Mapping(target= "doctor.id", source = "idDoctor")
+   // @Mapping(target= "patient.id", source = "idPatient")
     AppointmentEntity dtoToModel (AppointmentDTO appointmentDTO);
 
     List<AppointmentEntity> dtoListToEntityList (List<AppointmentDTO>appointmentDTO);

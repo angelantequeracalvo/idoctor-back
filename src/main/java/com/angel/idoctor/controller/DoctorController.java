@@ -16,6 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Validated
 @CrossOrigin
+
 public class DoctorController {
     private final DoctorService doctorService;
     @GetMapping()
